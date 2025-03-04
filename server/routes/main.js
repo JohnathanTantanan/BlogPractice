@@ -33,5 +33,4 @@ router.get('/myprofile',(req,res)=>{
 router.get('/popular',(req,res)=>{
     res.render('popular', { locals, layout: 'layouts/main' })
 })
-
 module.exports = router
