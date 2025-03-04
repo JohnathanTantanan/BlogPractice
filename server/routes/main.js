@@ -7,7 +7,7 @@ router.get('',(req,res)=>{
         title: "NodeJs Blog",
         description: "Simple Blog created with NodeJs, Express & MongoDB."
     }
-    res.render('index', {locals})
+    res.render('index', { locals, layout: 'layouts/main' })
 })
 
 router.get('/about',(req,res)=>{

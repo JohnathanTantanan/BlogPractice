@@ -10,9 +10,13 @@
   </head>
   <body>
     <div class = "container">
-        <%= include('../partials/header.ejs') %>
-        <%- body %>
-        <%= include('../partials/footer.ejs') %>
+        <%- include('../partials/header.ejs') %>
+        
+        <main class = "main">
+            <%- body %>
+        </main>
+        
+    
     </div>  
   </body>
   </html>

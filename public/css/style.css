@@ -1,3 +1,202 @@
-body{
+:root {
+    --primary-color: #2164B0;
+    --bg-dark: #222;
+    --bg-darker: #1a1a1a;
+    --text-light: #ffffff;
+    --header-height: 4rem;
+    --sidebar-width: 14rem;
+    --transition-speed: 0.2s;
+}
+
+/* ============ GENERAL FORMATTING ============ */
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Cambria, Times, serif;
+}
+
+body a {
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* ============ HEADER ELEMENTS ============ */
+.header {
+    background-color: var(--primary-color);
+    height: var(--header-height);
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header h1 {
+    font-size: 1.5em;
+    width: 100%;
+}
+
+#search-form {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 2rem;
+}
+
+#search {
+    width: 100%;
+    background-color: var(--bg-dark);  /* Changed to use the dark background variable */
+    color: var(--text-light);
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all var(--transition-speed) ease;
+}
+
+#search:focus {
+    background-color: var(--bg-darker);  /* Darker on focus */
+    border-color: rgba(255, 255, 255, 0.3);
+    outline: none;
+}
+
+#header-buttons {
+    padding-right: 2em;
+    display: flex;
+    margin-left: 10px;
+    margin-right: 2px;
+    gap: 1rem;
+}
+
+#header-buttons > a {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: var(--text-light);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all var(--transition-speed) ease;
+}
+
+#header-buttons > a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-1px);
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+}
+
+#logo > a {
+    color: #333;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+#logo img {
+    height: 40px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    margin-right: 10px;
+}
+
+.header-button img {
+    height: 1.4rem;
+    width: 1.4rem;
+    filter: invert(100%);
+    transition: all var(--transition-speed) ease;
+}
+/* ============ SIDEBAR ELEMENTS ============ */
+.sidebar {
+    background-color: var(--bg-darker);
+    height: calc(100vh - var(--header-height));  /* Adjust height to account for header */
+    width: var(--sidebar-width);
+    padding: 2rem 1rem;
+    display: flex;
+    position: fixed;
+    top: var(--header-height);  /* Position it directly below header */
+    left: 0;  /* Ensure it's aligned to the left */
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    margin-top: 0;  /* Remove the margin */
+}
+
+a.sidebar-buttons {
+    font-size: 1.1rem;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    color: var(--text-light);
+    opacity: 0.8;
+    transition: all var(--transition-speed) ease;
+}
+
+.sidebar-buttons img {
+    height: 1.4rem;
+    width: 1.4rem;
+    filter: invert(100%);
+    margin-right: 1rem;
+    transition: all var(--transition-speed) ease;
+}
+
+.sidebar-buttons:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 1;
+    transform: translateX(0.2rem);
+}
+
+.sidebar-buttons:hover img {
+    filter: invert(100%);
+    transform: scale(1.1);
+}
+
+/* ============ MAIN CONTENT ============ */
+.main {
+    margin-left: var(--sidebar-width);
+    margin-top: var(--header-height);
+    padding: 2rem;
+}
+
+/* ============ RESPONSIVE DESIGN ============ */
+@media (max-width: 768px) {
+    :root {
+        --sidebar-width: 4rem;
+    }
+
+    .sidebar-buttons span {
+        display: none;
+    }
+
+    #search-form {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 0 1rem;
+    }
+
+    #search-form {
+        display: none;
+    }
 }

@@ -1,1 +1,44 @@
-Header
+<header class="header">
+    <div id="logo">
+        <a href="/" title="Go to Home Page">
+            <img src="/img/logo.png" alt="Forum Logo">
+            <h1>The Forum</h1>
+        </a>
+    </div>
+    
+    <form action="/search" method="GET" id="search-form" role="search">
+        <input type="text" 
+               id="search" 
+               name="q" 
+               placeholder="Search"
+               aria-label="Search the forum">
+    </form>
+
+    <nav id="header-buttons" aria-label="User navigation">
+        <a href="/createpost" class="header-button">
+            <img src="img/add-icon.svg" alt="Post icon">
+        </a>
+        
+        <a href="/myprofile" class="header-button">Profile</a>
+        <a href="/login" class="header-button">Login</a>
+    </nav>
+</header>
+
+<aside class="sidebar" aria-label="Main navigation">
+    <nav>
+        <a href="/" class="sidebar-buttons">
+            <img src="img/home-icon.svg" alt="">
+            <span>Home</span>
+        </a>
+        <a href="/popular" class="sidebar-buttons">
+            <img src="img/trend-up-icon.svg" alt="Popular icon">
+            <span>Popular</span>
+        </a>
+        <a href="/communities" class="sidebar-buttons">
+            <img src="img/group-icon.svg" alt="Communities icon">
+            <span>Communities</span>
+        </a>
+
+        <h3>My Communities</h3>
+    </nav>
+</aside>
